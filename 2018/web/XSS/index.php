@@ -39,7 +39,7 @@
 				$xsssafe = '/' . implode('|', $xsssafe) . '/i';
 				$string = preg_replace($xsssafe, '', $string);
 
-				$safe = array('select', 'insert', 'update', 'delete', 'where', 'from', 'img', 'form','object');
+				$safe = array('select', 'insert', 'update', 'delete', 'where', 'from', 'img', 'form');
 				$safe = '/' . implode('|', $safe) . '/i';
 				return preg_replace($safe, 'hacker!!', $string);
 			}
