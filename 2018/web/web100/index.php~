@@ -1,0 +1,22 @@
+<?php 
+error_reporting(0);
+$id = $_POST['id'];
+$id = base64_encode($id);
+$sicnu = "  Hi! welcome to sicnuctf!";
+
+if ($id!==null) {
+	$id = serialize($id);
+	echo $sicnu.$id.'<br>---------------------<br>';
+
+	$sicnuid = $sicnu.$id;
+
+ 	$decodeid = base64_decode($sicnuid);
+	echo $decodeid;
+	if (strpos($decodeid, 'flag') !== false && strpos($decodeid, 'sicnuctf')!== false) {
+		echo 'flag{************}';
+	}
+	else{
+		echo "---Fa♂Q";
+	}
+}
+?>
